@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 import { copyToClipboard } from '@/utils/utils';
 
 const blurBlock = cva(
-  'absolute bottom-0 left-[2%] flex h-10 w-[96%] group-focus-visible:opacity-100 opacity-0 justify-items-center rounded bg-neutral-800/50 backdrop-blur-md backdrop-saturate-150 transition-opacity group-hover:opacity-100'
+  'absolute bottom-1 left-[2%] flex h-10 w-[96%] group-focus-visible:opacity-100 opacity-0 justify-items-center rounded bg-neutral-800/50 backdrop-blur-md backdrop-saturate-150 transition-opacity group-hover:opacity-100'
 );
 
 const btn = cva(
