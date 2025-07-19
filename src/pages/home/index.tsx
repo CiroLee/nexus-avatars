@@ -13,7 +13,7 @@ export default function Home() {
           Free placeholder avatars, you can download them or copy the link to use in your project
         </p>
       </div>
-      <div className="mx-auto grid max-w-7xl grid-cols-2 justify-items-center gap-4 px-4 pb-20 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 justify-items-center gap-4 px-4 pb-20 md:grid-cols-3 md:px-0 lg:grid-cols-4 xl:grid-cols-6">
         {data.map((item) => (
           <GalleryImage loading="lazy" src={item.src} key={item.key} alt={item.name} width={512} height={512} />
         ))}
