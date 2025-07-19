@@ -1,0 +1,9 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "editor.formatOnSave": true,
+  "cSpell.words": ["tailwindcss", "commitlint", "clsx", "tseslint", "sonner"],
+  "tailwindCSS.classFunctions": ["cva", "cn"]
+}
