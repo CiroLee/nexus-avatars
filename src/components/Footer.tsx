@@ -4,7 +4,7 @@ const footerItem = cva('flex items-center gap-1 text-sm text-neutral-400 transit
 export default function Footer() {
   return (
     <footer className="h-20 bg-zinc-900">
-      <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-end space-x-6 px-4 md:px-0">
+      <div className="mx-auto flex h-full w-full max-w-7xl items-center justify-end space-x-6 px-4">
         <a
           className={footerItem()}
           href="https://github.com/CiroLee/nexus-kit"

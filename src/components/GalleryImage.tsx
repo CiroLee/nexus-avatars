@@ -5,27 +5,35 @@ import { cn } from '@/lib/utils';
 import { copyToClipboard } from '@/utils/utils';
 
 const blurBlock = cva(
-  'absolute bottom-1 left-[2%] flex h-10 w-[96%] group-focus-visible:opacity-100 opacity-0 justify-items-center rounded bg-neutral-800/50 backdrop-blur-md backdrop-saturate-150 transition-opacity group-hover:opacity-100'
+  `absolute bottom-1 left-[2%] flex h-10 w-[96%] opacity-0 justify-items-center rounded bg-neutral-800/70 backdrop-blur-lg backdrop-saturate-200 transition-opacity group-hover:opacity-100`
 );
 
 const btn = cva(
   'flex size-full outline-none focus-visible:text-neutral-100 cursor-pointer items-center justify-center text-neutral-300/80 hover:text-neutral-100'
 );
-export default function GalleryImage({ className, ...props }: React.ComponentPropsWithRef<'img'>) {
+
+interface GalleryImageProps extends React.ComponentPropsWithoutRef<'img'> {
+  tag?: string;
+}
+export default function GalleryImage({ className, tag, ...props }: GalleryImageProps) {
   const download = `${window.location.protocol}//${window.location.host}${props.src}`;
   const copyUrl = () => {
     copyToClipboard(download).then(() => {
-      toast('Copied!');
+      toast('Copied!', { position: 'top-right' });
     });
   };
   return (
     <div
-      tabIndex={0}
       className={cn(
-        'overflow group relative aspect-square overflow-hidden rounded border border-neutral-700/80 outline-none',
+        'gallery-image overflow group relative aspect-square overflow-hidden rounded border border-neutral-700/80 outline-none',
         className
       )}>
-      <img tabIndex={-1} {...props} className="size-full rounded-[inherit] object-cover" />
+      {tag ? (
+        <div className="absolute top-1 right-1 z-2 flex size-6 items-center justify-center rounded-xs bg-neutral-700/20 text-xs text-neutral-500">
+          {tag}
+        </div>
+      ) : null}
+      <img {...props} className="size-full rounded-[inherit] object-cover" />
       <div className={blurBlock()}>
         <a href={download} download={props.alt} className={btn()}>
           <IconDownload size={20} className="transition-colors" />

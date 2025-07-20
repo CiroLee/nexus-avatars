@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@cirolee/tiny-motion':
+        specifier: ^0.2.7
+        version: 0.2.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@tabler/icons-react':
         specifier: ^3.34.0
         version: 3.34.0(react@19.1.0)
@@ -116,6 +119,12 @@ packages:
   '@babel/helper-validator-identifier@7.27.1':
     resolution: {integrity: sha512-D2hP9eA+Sqx1kBZgzxZh0y1trbuU+JoDkiEwqhQ36nodYqJwyEIhPSdMNd7lOm/4io72luTPWH20Yda0xOuUow==}
     engines: {node: '>=6.9.0'}
+
+  '@cirolee/tiny-motion@0.2.7':
+    resolution: {integrity: sha512-aIuFR668Azru/aibaCamaPwxPkbozjO5OV5WSZIQMKa0HWKOo4SEdfE8xrzXojfcWEcGrz2I6qJKgqYE0bGrEg==}
+    peerDependencies:
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
 
   '@commitlint/cli@19.8.1':
     resolution: {integrity: sha512-LXUdNIkspyxrlV6VDHWBmCZRtkEVRpBKxi2Gtw3J54cGWhLCTouVD/Q6ZSaSvd2YaDObWK8mDjrz3TIKtaQMAA==}
@@ -2354,6 +2363,11 @@ snapshots:
       picocolors: 1.1.1
 
   '@babel/helper-validator-identifier@7.27.1': {}
+
+  '@cirolee/tiny-motion@0.2.7(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
 
   '@commitlint/cli@19.8.1(@types/node@24.0.15)(typescript@5.8.3)':
     dependencies:

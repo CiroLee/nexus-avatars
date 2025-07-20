@@ -5,7 +5,11 @@ export default function Toaster() {
       richColors
       duration={2000}
       theme="dark"
-      style={{ '--normal-bg': '#232222', '--normal-birder': 'var(--color-neutral-700)' } as React.CSSProperties}
+      style={
+        {
+          '--normal-bg': 'var(--color-neutral-800)'
+        } as React.CSSProperties
+      }
     />
   );
 }
