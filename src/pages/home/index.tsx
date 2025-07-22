@@ -16,7 +16,6 @@ const container = cva(
 export default function Home() {
   const [tabValue, setTabValue] = useState('profile');
   const imageList = getProfileImage();
-  console.log(imageList);
   const profileData = imageList.filter((item) => item.name?.startsWith('profile'));
   const transData = imageList.filter((item) => item.name?.startsWith('trans'));
   const emojiData = imageList.filter((item) => item.name?.startsWith('emoji'));
