@@ -13,7 +13,7 @@ const btn = cva(
 );
 
 interface GalleryImageProps extends React.ComponentPropsWithoutRef<'img'> {
-  tag?: string;
+  tag?: React.ReactNode;
 }
 export default function GalleryImage({ className, tag, ...props }: GalleryImageProps) {
   const download = `${window.location.protocol}//${window.location.host}${props.src}`;
@@ -29,7 +29,7 @@ export default function GalleryImage({ className, tag, ...props }: GalleryImageP
         className
       )}>
       {tag ? (
-        <div className="absolute top-1 right-1 z-2 flex size-6 items-center justify-center rounded-xs bg-neutral-700/20 text-xs text-neutral-500">
+        <div className="absolute top-1 right-1 z-2 flex size-6 items-center justify-center rounded-xs bg-neutral-700/20 text-xs text-neutral-400">
           {tag}
         </div>
       ) : null}

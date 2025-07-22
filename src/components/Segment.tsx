@@ -32,7 +32,7 @@ const segmentItem = cva(
       },
       active: {
         true: 'text-neutral-50',
-        false: 'not-disabled:hover:text-neutral-400 text-neutral-500'
+        false: 'not-disabled:hover:text-neutral-300 text-neutral-500'
       },
       equaledWidth: {
         true: 'flex-1'

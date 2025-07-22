@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { IconBrandUnsplash } from '@tabler/icons-react';
 import { useGroup, EASING_FUNCTIONS } from '@cirolee/tiny-motion';
 import { cva } from 'class-variance-authority';
 import Footer from '@/components/Footer';
@@ -14,8 +15,11 @@ const container = cva(
 
 export default function Home() {
   const [tabValue, setTabValue] = useState('profile');
-  const profileData = getProfileImage().filter((item) => !item.name.startsWith('trans'));
-  const transData = getProfileImage().filter((item) => item.name.startsWith('trans'));
+  const imageList = getProfileImage();
+  console.log(imageList);
+  const profileData = imageList.filter((item) => item.name?.startsWith('profile'));
+  const transData = imageList.filter((item) => item.name?.startsWith('trans'));
+  const emojiData = imageList.filter((item) => item.name?.startsWith('emoji'));
 
   const controller = useGroup(
     {
@@ -48,10 +52,10 @@ export default function Home() {
         <Segment
           defaultValue="profile"
           className="mb-4"
-          equaledWidth
           options={[
             { label: 'Profile', value: 'profile' },
-            { label: 'Bg removed', value: 'bg-removed' }
+            { label: 'Bg removed', value: 'bg-removed' },
+            { label: 'Emoji', value: 'emoji' }
           ]}
           onValueChange={setTabValue}
         />
@@ -62,6 +66,7 @@ export default function Home() {
             <GalleryImage
               loading="lazy"
               className="opacity-0"
+              tag={<IconBrandUnsplash size={12} />}
               src={item.src}
               key={item.key}
               alt={item.name}
@@ -74,6 +79,22 @@ export default function Home() {
       <Show when={tabValue === 'bg-removed'}>
         <div className={container()}>
           {transData.map((item) => (
+            <GalleryImage
+              className="opacity-0"
+              loading="lazy"
+              tag="AI"
+              src={item.src}
+              key={item.key}
+              alt={item.name}
+              width={512}
+              height={512}
+            />
+          ))}
+        </div>
+      </Show>
+      <Show when={tabValue === 'emoji'}>
+        <div className={container()}>
+          {emojiData.map((item) => (
             <GalleryImage
               className="opacity-0"
               loading="lazy"

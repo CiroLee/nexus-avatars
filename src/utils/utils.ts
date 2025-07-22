@@ -1,9 +1,10 @@
 export const getProfileImage = () => {
-  const data = import.meta.glob('/src/assets/**/*.{png,jpg,jpeg,gif,svg}', { eager: true });
-  const result = Object.entries(data).map(([path, module]) => ({
-    key: path,
-    src: (module as { default: string }).default,
-    name: path.split('/').pop() as string
+  const imagePaths = Object.keys(import.meta.glob('/public/images/**/*.{png,jpg,jpeg,gif,svg}', { eager: true }));
+  const publicImageUrls = imagePaths.map((path) => path.replace('/public', ''));
+  const result = publicImageUrls.map((item, index) => ({
+    key: index,
+    src: item,
+    name: item.split('/').pop()
   }));
 
   return result;
