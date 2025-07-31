@@ -125,7 +125,7 @@ export default function Home() {
         </div>
       </Show>
       <p className="pt-20 pb-16 text-center text-sm text-neutral-400">
-        The images are taken from the free items in{' '}
+        Some of the images are from the free items in{' '}
         <a
           href="https://unsplash.com"
           target="_blank"
