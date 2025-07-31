@@ -19,6 +19,7 @@ export default function Home() {
   const profileData = imageList.filter((item) => item.name?.startsWith('profile'));
   const transData = imageList.filter((item) => item.name?.startsWith('trans'));
   const emojiData = imageList.filter((item) => item.name?.startsWith('emoji'));
+  const flatData = imageList.filter((item) => item.name?.startsWith('flat'));
 
   const controller = useGroup(
     {
@@ -54,7 +55,8 @@ export default function Home() {
           options={[
             { label: 'Profile', value: 'profile' },
             { label: 'Bg removed', value: 'bg-removed' },
-            { label: 'Emoji', value: 'emoji' }
+            { label: 'Emoji', value: 'emoji' },
+            { label: 'Flat', value: 'flat' }
           ]}
           onValueChange={setTabValue}
         />
@@ -98,6 +100,21 @@ export default function Home() {
               className="opacity-0"
               loading="lazy"
               tag="AI"
+              src={item.src}
+              key={item.key}
+              alt={item.name}
+              width={512}
+              height={512}
+            />
+          ))}
+        </div>
+      </Show>
+      <Show when={tabValue === 'flat'}>
+        <div className={container()}>
+          {flatData.map((item) => (
+            <GalleryImage
+              className="opacity-0 [&_img]:scale-[0.85]"
+              loading="lazy"
               src={item.src}
               key={item.key}
               alt={item.name}
